@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    // productService constructor injection
-    @Autowired
-    ProductService productService;
+    private ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping(value = { "", "/" })
     public @NotNull Iterable<Product> getProducts() {

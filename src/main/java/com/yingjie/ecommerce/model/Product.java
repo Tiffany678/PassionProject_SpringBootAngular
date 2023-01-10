@@ -1,11 +1,18 @@
 package com.yingjie.ecommerce.model;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Basic;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
+
+//import javax.persistence.*;
+//import javax.validation.constraints.NotNull;
 
 @Entity
 public class Product {
 
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,23 +25,14 @@ public class Product {
 
     private String pictureUrl;
 
-    // all arguments contructor
-    public Product(Long id, String name, Double price, String pictureUrl) {
+    public Product(Long id, @NotNull(message = "Product name is required.") String name, Double price, String pictureUrl) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.pictureUrl = pictureUrl;
     }
 
-    // standard getters and setters
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Product() {
     }
 
     public String getName() {
@@ -59,5 +57,13 @@ public class Product {
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

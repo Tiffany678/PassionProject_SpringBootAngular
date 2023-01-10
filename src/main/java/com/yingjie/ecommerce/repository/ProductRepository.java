@@ -1,4 +1,8 @@
 package com.yingjie.ecommerce.repository;
 
-public class ProductRepository {
+
+import com.yingjie.ecommerce.model.Product;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProductRepository extends CrudRepository<Product, Long> {
 }
