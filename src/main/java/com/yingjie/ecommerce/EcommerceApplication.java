@@ -1,5 +1,6 @@
 package com.yingjie.ecommerce;
 
+import com.yingjie.ecommerce.model.Product;
 import com.yingjie.ecommerce.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

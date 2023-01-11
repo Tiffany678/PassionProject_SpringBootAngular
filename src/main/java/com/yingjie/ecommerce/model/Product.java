@@ -4,6 +4,7 @@ import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 
 //import javax.persistence.*;
